@@ -1,0 +1,33 @@
+{% extends 'musicpro/base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <div class="EspaciadoContenido">
+        <!--
+    <div>
+        <img src="{% static 'fotoscarrusel/post-2-zapatillas.gif' %}" id="indexFotos" alt="">
+    </div>
+-->
+<div id=SlideT>
+    <div id="txtslider-div">
+        <p id="txtslider">¡Tenemos varios productos para ti!</p> 
+    </div>
+<div class="Slider">   
+    <ul>
+    <li><img  src="{% static 'fotoscarrusel/bajos.jpg'%}" alt=""></li>
+    <li><img  src="{% static 'fotoscarrusel/guitarras.jpg'%}" alt=""></li>
+    <li><img  src="{% static 'fotoscarrusel/bateria.jpg'%}" alt=""></li>
+    <li><img  src="{% static 'fotoscarrusel/amplificadores.jpg'%}" alt=""></li>
+    
+</ul>
+</div>
+</div>
+
+    <div class="buttons">
+          <a  class="btn effect01"  href="/catalogo.html"><span>Comprar</span></a>
+      </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,217 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Musicpro.com</title>
+    <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <script src="https://kit.fontawesome.com/b40119df0c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/st.css' %}">
+    <link rel="stylesheet" href="{% static 'css/st.css' %}">
+    <link rel="stylesheet" href="{% static 'css/foot-head.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Slides.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styleLogin.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="bg-dark  text-white">
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu"><i class="icono-asd fas fa-bars"></i></label>
+        <nav class="menu bg-dark  text-white">
+            <ul>
+                <li>
+                    <a href="/index.html"><i class="icono-menu fas fa-home"></i>Inicio </a>
+                </li>
+                <li><a href="/Destacados.html"><i class="fas fa-star"></i> Destacados</a></li>
+                <li>
+                    <a href="/catalogo.html"><i class="fab fa-shopify"></i> catalogo</a>
+                </li>
+                <li>
+                    <a href="/carrito.html"><i class="fas fa-shopping-cart"></i> carrito</a>
+                </li>
+                {% if user.is_anonymous %}
+                <li>
+                    <a href="/login"><i class="fas fa-sign-in-alt"></i>login</a>
+                </li>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="/logout"><i class="fas fa-sign-out-alt"></i>logout</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+       
+        {% block content %} {% endblock %}
+    </div>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+  
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+
+  
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <p>
+            ¡Encuentra una gran variedad de marcas de distintos instrumentos aquí en Music Pro!
+        </p>
+      </section>
+      <!-- Section: Text -->
+
+
+      <!-- Section: Links -->
+          <!-- Section: Images -->
+    <section class="">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="{% static 'images/logos/Epiphone.png' %}"
+                class="w-100"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="{% static 'images/logos/Fender.png' %}"
+                class="w-100"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+
+
+          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="{% static 'images/logos/gibson.png' %}"
+                class="w-100"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+
+
+          <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="{% static 'images/logos/Orange.png' %}"
+                class="w-100"
+              />
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+
+        
+
+
+
+
+
+
+
+        </div>
+      </section>
+      <!-- Section: Images -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyright:
+      <a class="text-white" href="">Musicpro.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+    <script src="{% static 'js/popup.js' %}"></script>
+    <script src="{% static 'js/estructuracarousel.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

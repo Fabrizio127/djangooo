@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+.Slider{
+    max-width: 100%; height:500px;
+    overflow: hidden;
+}
+
+.Slider ul {
+    display: flex;
+    padding: 0%;
+    width: 400%; 
+    animation: cambio 20s infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
+.Slider li {
+    width: 100%;
+    list-style: none;
+}
+.Slider img {
+    width: 100%;
+}
+
+#SlideT{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Righteous', cursive;
+    font-size: 30px;
+    
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+

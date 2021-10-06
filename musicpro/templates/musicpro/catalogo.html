@@ -1,0 +1,75 @@
+{% extends 'musicpro/base.html' %}
+{% load static %}
+{% load cart_tags %}
+{% block content %}
+
+{% if user.is_staff %}
+<div id="botton">
+    <button class="bott" id="btn-abrir-popup" class="btn-abrir-popup"><i
+            class="fas fa-plus"></i></button>
+</div>
+{% endif %}
+
+<div class="container-fluid">
+    <div class="EspaciadoContenido">
+        <div class="row start-xs between-xs">
+            
+            {% for product in products %}
+            <div class="col-md-4  ">
+                <div class="card">
+                    <img src="{{ product.imgProducto.url }}" style="width:100%;" class="card-img-top imgproductos" alt="{{ product.nombre_producto}}" />
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre: {{ product.nombre_producto }}</h5>
+                        <p class="card-text">Precio: ${{ product.precio }}</p>
+                    </div>
+
+                    <div class='card-footer text-center'>
+                        {% if user.is_authenticated %}
+                        <button class="btn">
+                            <a href="{% url 'add_product_catalogo' product.id %}"><span>Añadir a carrito</span></a>
+                        </button>
+                        {% endif %}
+                        {% if user.is_anonymous %}
+                        
+                            <a href=""><span></span></a>
+                            <button class="btn">
+                                <a href="login"><span>comprar</span></a>
+                            </button>
+                        {% endif %}
+                        {% if user.is_staff %}
+                        <button class="btn">
+                            <a href="{% url 'modificar_producto' product.id %}"><span>MODIFICAR</span></a>
+                        </button>
+                        {% endif %}
+                        {% if user.is_superuser %}
+                        <button class="btn">
+                            <a href="{% url 'eliminar_producto' product.id %}"><span>ELIMINAR</span></a>
+                        </button>
+                        {% endif %}
+                        {% if user.is_staff %}
+                        <button class="btn">
+                            <a href="{% url 'agregar_descuento' product.id %}"><span>Descuento</span></a>
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+</div>
+<div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+        <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+        <h3>agregar producto</h3>
+        <h4>Agregar el siguiente producto</h4>
+        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class="contenedor-inputs">
+                {{ form.as_p }}
+            </div>
+            <input type="submit" class="btn-submit" value="AGREGAR">
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

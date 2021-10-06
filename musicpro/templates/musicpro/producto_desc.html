@@ -1,0 +1,20 @@
+{% extends 'musicpro/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="EspaciadoContenido">
+            <section class="Mod-camp">
+                <br>
+                <h1>Agregar Descuento</h1>
+                Nombre producto {{prod.nombre_producto }}
+                <div class="contenedor-camp">
+                    <form method="POST" class="form-camp" enctype="multipart/form-data">{% csrf_token %}
+                        {{ product.as_p }}
+                        <input type="submit" class="btn-mod" value="Agregar">
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

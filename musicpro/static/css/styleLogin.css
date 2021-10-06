@@ -1,0 +1,23 @@
+.logcenter{
+    
+    text-align: center;
+    margin-left: 28vw;
+    background-color: rgba(0, 0, 0, 0.486);
+    position: relative;
+    width: 40vw;
+    margin-top: 10vw;
+}
+form{
+    color: rgb(255, 255, 255);
+
+}
+h4{
+    color: #fff;
+
+}
+.btn{
+    color: #212529;
+    background-color: rgb(0, 0, 0);
+    border-color: #000000
+
+}

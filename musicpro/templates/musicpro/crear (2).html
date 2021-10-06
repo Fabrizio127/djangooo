@@ -1,0 +1,12 @@
+{% extends 'ZP/base.html' %}
+{% load static %}
+{% load cart_tags %}
+{% block content %}
+<br>
+<form action="{{ response.url }}" method="POST">{% csrf_token %}
+<input type="hidden" name="token_ws" value="{{ response.token }}">
+<input type="submit" value="Ejecutar Pago con Webpay">
+</form>
+<br>
+
+{% endblock %}

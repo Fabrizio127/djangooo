@@ -1,0 +1,20 @@
+{% extends 'musicpro/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="EspaciadoContenido">
+            <div class="owl-carousel">
+                <div class="animate__animated animate__bounce"><img src="{% static 'fotoscarrusel/tenor.gif' %}"  id="carouselFotos" alt=""></div>
+                <div class="animate__animated animate__bounce"><img src="{% static 'fotoscarrusel/5d515ea82242e9387aedea15471e1a1f.gif' %}"id="carouselFotos" alt=""></div>
+                <div class="animate__animated animate__bounce"><img src="{% static 'imagen-zapatillas-wilson.gif' %}" id="carouselFotos"alt=""></div>
+
+            </div>
+   
+</div>
+    <script src="{% static 'js/popup.js' %}"></script>
+    <script src="{% static 'js/estructuracarousel.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

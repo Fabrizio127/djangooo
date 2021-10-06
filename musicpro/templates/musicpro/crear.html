@@ -1,0 +1,9 @@
+
+
+{"response":response,"buy_order":buy_order,"session_id":session_id,"return_url":return_url,"amount":amount})
+<br>
+<form action="{{ response.url }}" method="POST">{% csrf_token %}
+<input type="hidden" name="token_ws" value="{{ response.token }}">
+<input type="submit" value="Ejecutar Pago con Webpay">
+</form>
+<br>

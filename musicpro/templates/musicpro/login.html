@@ -1,0 +1,24 @@
+{% extends 'musicpro/base.html' %}
+{% load static %}
+{% block content %}
+<body>
+    <div class="container">
+        <div>
+            <div class="card justify-content-center align-items-center w-100 p-2">
+                {% if user.is_anonymous %}
+                {% endif %}
+                    <div class="logcenter"> 
+                        <h4> Bienvenido </h4>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="submit" value="Ingresar" class="btn btn-secondary btn-lg">
+                        </form>
+                        <p><a href="{% url 'register' %}" class="btn btn-secondary btn-sm ml-auto mt-2">Registrarse</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
